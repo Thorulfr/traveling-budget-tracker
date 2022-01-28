@@ -1,7 +1,7 @@
 {
-  "name": "budget-app",
+  "name": "budget-tracker-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "<!-- #1 Fan is a collaborative project created as part of the University of Utah's full-stack developer bootcamp. It is intended to serve as a one-stop shop for music lovers to listen to and discover new music, save their favorite artists and albums, find upcoming concerts (for a specific artist or venue or the user's general location), and catalogue a user's attended concerts.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,8 +12,8 @@
     "type": "git",
     "url": "git+https://github.com/coding-boot-camp/unit18hw.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Benjamin Holt",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/coding-boot-camp/unit18hw/issues"
   },
@@ -23,5 +23,15 @@
     "express": "^4.17.1",
     "mongoose": "^5.5.15",
     "morgan": "^1.9.1"
-  }
+  },
+  "keywords": [
+    "budget",
+    "tracker",
+    "traveling",
+    "indexeddb",
+    "pwa",
+    "service",
+    "worker",
+    "mongodb"
+  ]
 }
