@@ -79,3 +79,6 @@ function uploadRecords() {
         }
     };
 }
+
+// Listen for client regaining online access
+window.addEventListener('online', uploadRecords);
