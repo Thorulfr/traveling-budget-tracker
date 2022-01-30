@@ -17,7 +17,7 @@ request.onsuccess = function (event) {
     // Check if client is online
     if (navigator.onLine) {
         // Upload locally stored transactions
-        // uploadTransactions();
+        uploadRecords();
     }
 };
 
@@ -34,4 +34,48 @@ function saveRecord(record) {
     const recordObjectStore = transaction.objectStore('new_record');
     // Add the record to the object store
     recordObjectStore.add(record);
+}
+
+// Upload stored records
+function uploadRecords() {
+    // Open read/write transaction with database
+    const transaction = db.transaction(['new_record'], 'readwrite');
+    // Access the object store
+    const recordObjectStore = transaction.objectStore('new_record');
+    // Get all locally stored records, store in variable
+    const getAll = recordObjectStore.getAll();
+    // If getAll() is successful...
+    getAll.onsuccess = function () {
+        // If there are stored records, send them through the API routes
+        if (getAll.result.length > 0) {
+            fetch('/api/transaction', {
+                method: 'POST',
+                body: JSON.stringify(getAll.result),
+                headers: {
+                    Accept: 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json',
+                },
+            })
+                .then((response) => response.json())
+                .then((serverResponse) => {
+                    if (serverResponse.message) {
+                        throw new Error(serverResponse);
+                    }
+                    // Open transaction with database
+                    const transaction = db.transaction(
+                        ['new_record'],
+                        'readwrite'
+                    );
+                    // Access object store
+                    const recordObjectStore =
+                        transaction.objectStore('new_record');
+                    // Clear all items in store
+                    recordObjectStore.clear();
+                    alert('All saved transactions have been submitted!');
+                })
+                .catch((err) => {
+                    console.error(err);
+                });
+        }
+    };
 }
