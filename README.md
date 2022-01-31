@@ -2,9 +2,9 @@
 
 ## Description
 
-<!-- #1 Fan is a collaborative project created as part of the University of Utah's full-stack developer bootcamp. It is intended to serve as a one-stop shop for music lovers to listen to and discover new music, save their favorite artists and albums, find upcoming concerts (for a specific artist or venue or the user's general location), and catalogue a user's attended concerts.
+A budget-tracking app designed with frequent travelers in mind. The application allows users to add both expenses and income, letting travelers track their expenses throughout their journeys. It functions both on- and offline, caching files so that users can still access the application without a connection. Using IndexedDB, users' submitted transactions are stored locally if there is no connection; once the user's client reconnects to the web, locally stored data is automatically uploaded and then purged from local storage. The app has also been designed as a PWA, allowing users to install it either in their browser or onto their mobile devices.
 
-The entire application – both front- and back-end – was built from the ground up using the below user story, acceptance criteria, APIs, and languages. -->
+The application was built to meet the following user story and acceptance criteria:
 
 ## User Story
 
@@ -26,46 +26,19 @@ THEN the deposits or expenses added while they were offline are added to their t
 
 ## Built With
 
-<!-- -   HTML
+-   HTML
 -   CSS
 -   JavaScript
--   Tailwind CSS
 -   Node.js
--   Sequelize
--   Handlebars
--   Moment
--   BCrypt
 -   Express
--   Dotenv
--   MySQL2 -->
+-   MongoDB
+-   Mongoose
+-   Heroku
 
-<!-- ## APIs
+## Deployed Application
 
--   [Deezer](https://developers.deezer.com/api)
--   [Last.fm](https://www.last.fm/api#getting-started)
--   [Seatgeek](https://platform.seatgeek.com/)
--   [Setlist.fm](https://api.setlist.fm/docs/1.0/index.html) -->
+[Heroku Deployment](https://pure-refuge-57011.herokuapp.com/)
 
-## Deployed Application and Screenshots
+## Screenshot
 
-<!-- https://no1fan.herokuapp.com/ -->
-
-<!-- ### Landing Page
-
-![Landing Page](./public/assets/screenshot1.png)
-
-### Search Page
-
-![Search Page]("./public/assets/screenshot2.png") -->
-<!--
-## Want to contribute?
-
-Fork a copy of the repo and have fun! Feel free to add pull requests for any rad features you develop.
-
-## License
-
-This application is open-license.
-
-## Questions
-
-Feel free to contact any of us via our respective GitHub pages! -->
+![Screenshot](./assets/images/readme-screenshot.png)
